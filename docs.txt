@@ -1,0 +1,22 @@
+FastAPI:
+
+main.py
+This file serves as the entry point of the FastAPI application. It creates the FastAPI app instance and includes any routers that are defined in other parts of the application. This file essentially wires everything together and gets the application running.
+
+models.py
+Here, you define your data models, usually corresponding to the tables in your database if you're using an ORM like SQLAlchemy. These models map Python classes to database tables and are used by the ORM to query the database.
+
+schemas.py
+This file contains Pydantic models (schemas) that are used for validating the data being sent to and from the API. These schemas are crucial for type checking and data validation, ensuring that the data conforms to the expected structure.
+
+crud.py
+CRUD stands for Create, Read, Update, and Delete. The crud.py file encapsulates the logic for interacting with the database. It abstracts the direct database access away from the API layer and can often be reused across different parts of the application.
+
+services.py
+The services.py file contains the business logic of the application. It calls upon CRUD functions and usually contains more complex processes that involve manipulating data before it is saved or after it is fetched from the database.
+
+api.py
+This is where you define your API routes and endpoints. Each route will validate input data using schemas, call the appropriate service layer functions, and return the desired response. It acts as the controller in an MVC architecture, handling HTTP requests and responses.
+
+test_main.py
+This is an example of a test file that would contain tests for your application. Using FastAPI's test client, you can simulate requests to your application and assert that the responses are as expected.
